@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjay.B | Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+nav h1 {
+  font-size: 22px;
+  color: #00e5ff;
+  font-weight: 500;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  color: #00e5ff;
+}
+
+/* HERO */
+.hero {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-name {
+  font-size: 38px;
+  font-weight: 600;
+  color: #eaeaea;
+}
+
+.hero-role {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #00e5ff;
+  opacity: 0.85;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 10%;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #00e5ff;
+  font-weight: 500;
+}
+
+/* ABOUT */
+.about {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* SKILLS */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.skill {
+  background: rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.project h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 18px;
+  background: rgba(0,0,0,0.4);
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Sanjay.B</h1>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h2 class="hero-name">Sanjay.B</h2>
+    <p class="hero-role">Computer Science Student | Learning Web Development</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p class="about">
+    I am a Computer Science and Engineering student (2nd Year) at Bannari Amman
+    Institute of Technology, Coimbatore. I am learning web development and
+    programming fundamentals and enjoy building clean, simple user interfaces.
+    I also maintain discipline and consistency through gym and fitness.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills">
+    <div class="skill">C</div>
+    <div class="skill">Java</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">Basic Web Development</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Music Player UI</h3>
+      <p>Basic music player interface built using HTML and CSS.</p>
+    </div>
+    <div class="project">
+      <h3>Personal Portfolio</h3>
+      <p>Simple responsive portfolio website using HTML and CSS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact">
+    <p>Email: <strong>sanjaybmcbe@gmail.com</strong></p>
+    <p>Location: Coimbatore, India</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Sanjay.B
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+const reveal = () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 80) {
+      sec.classList.add("show");
+    }
+  });
+};
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+
+</body>
+</html>
